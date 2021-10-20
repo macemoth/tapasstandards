@@ -1,4 +1,4 @@
-package ch.unisg.standards.domain;
+package com.github.macemoth.tapasstandards.domain;
 
 import lombok.Getter;
 import lombok.Setter;

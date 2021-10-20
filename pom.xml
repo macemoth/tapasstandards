@@ -8,7 +8,7 @@
 		<version>2.5.3</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>ch.unisg</groupId>
+	<groupId>com.github.macemoth</groupId>
 	<artifactId>tapas-standards</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>tapas-standards</name>

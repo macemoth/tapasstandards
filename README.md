@@ -2,6 +2,25 @@
 
 This documents defines common Tapas APIs.
 
+## Installation
+
+To add this library to your project, insert following to your `pom.xml`:
+
+```xml
+<repository>
+    <id>jitpack.io</id>
+    <url>https://jitpack.io</url>
+</repository>
+```
+
+```xml
+    <dependency>
+        <groupId>com.github.macemoth</groupId>
+        <artifactId>hsg-tapas-standards</artifactId>
+        <version>v1.0</version>
+    </dependency>
+```
+
 ## Interaction Scheme
 
 ⬅️➡️ denotes a JSON Object and its direction of sending.

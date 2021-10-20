@@ -1,6 +1,6 @@
-package ch.unisg.standards.formats;
+package com.github.macemoth.tapasstandards.formats;
 
-import ch.unisg.standards.domain.Bid;
+import com.github.macemoth.tapasstandards.domain.Bid;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;

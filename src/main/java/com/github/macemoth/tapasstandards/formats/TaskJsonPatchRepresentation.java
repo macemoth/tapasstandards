@@ -1,6 +1,6 @@
-package ch.unisg.standards.formats;
+package com.github.macemoth.tapasstandards.formats;
 
-import ch.unisg.standards.domain.Task;
+import com.github.macemoth.tapasstandards.domain.Task;
 import com.fasterxml.jackson.databind.JsonNode;
 
 import java.util.Optional;
