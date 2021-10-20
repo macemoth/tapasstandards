@@ -13,9 +13,6 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>tapas-standards</name>
 	<description>TAPAS Standards</description>
-	<properties>
-		<java.version>11</java.version>
-	</properties>
 	<repositories>
 	</repositories>
 	<dependencies>
