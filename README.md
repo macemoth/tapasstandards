@@ -16,7 +16,7 @@ To add this library to your project, insert following to your `pom.xml`:
 ```xml
     <dependency>
         <groupId>com.github.macemoth</groupId>
-        <artifactId>hsg-tapas-standards</artifactId>
+        <artifactId>tapasstandards</artifactId>
         <version>v1.0</version>
     </dependency>
 ```
