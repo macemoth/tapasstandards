@@ -35,12 +35,12 @@ To add this library to your project, insert following to your `pom.xml`:
 
 ### Task Execution
 
-| TaskList (offering)            |                                          | AuctionHouse (bidding) |
-| ------------------------------ | ---------------------------------------- | ---------------------- |
-| HTTP POST @ `/tasks/<TaskID>`  | Task ➡️ (response)                        |                        |
-| HTTP PATCH @ `/tasks/<TaskID>` | ⬅️ TaskPatch (State.ASSIGNED)             |                        |
-|                                |                                          | (Executes task)        |
-| HTTP PATCH @ `/tasks/<TaskID>` | ⬅️ TaskPatch (State.EXECUTED, OutputData) |                        |
+| TaskList (offering)               |                                          | AuctionHouse (bidding) |
+| --------------------------------- | ---------------------------------------- | ---------------------- |
+| HTTP GET @ `/tasks/<task-UUID>`   | Task ➡️                                   |                        |
+| HTTP PATCH @ `/tasks/<task-UUID>` | ⬅️ TaskPatch (State.ASSIGNED)             |                        |
+|                                   |                                          | (Executes task)        |
+| HTTP PATCH @ `/tasks/`<task-UUID> | ⬅️ TaskPatch (State.EXECUTED, OutputData) |                        |
 
 ## Uniform HTTP API
 
@@ -73,7 +73,7 @@ To add this library to your project, insert following to your `pom.xml`:
 
 *No response body*
 
-#### HTTP POST `/bid/<TaskID>` 
+#### HTTP POST `/bid/<auctionId>` 
 
 **Media-Type** `application-json`
 
