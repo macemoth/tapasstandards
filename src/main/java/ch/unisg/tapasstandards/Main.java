@@ -1,4 +1,4 @@
-package com.github.macemoth.tapasstandards;
+package ch.unisg.tapasstandards;
 
 public class Main {
     public static void main(String[] args) {
