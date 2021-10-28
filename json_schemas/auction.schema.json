@@ -1,0 +1,29 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "auctionId": {
+      "type": "string"
+    },
+    "auctionHouseUri": {
+      "type": "string"
+    },
+    "taskUri": {
+      "type": "string"
+    },
+    "taskType": {
+      "type": "string"
+    },
+    "deadline": {
+      "type": "string",
+      "description": "Produced by Javas toString() method of the Timestamp class"
+    }
+  },
+  "required": [
+    "auctionId",
+    "auctionHouseUri",
+    "taskUri",
+    "taskType",
+    "deadline"
+  ]
+}
