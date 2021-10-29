@@ -10,9 +10,11 @@ This documents defines common Tapas APIs.
 
 | AuctionHouse (offering)        |                                      | AuctionHouse (bidding)    |
 | ------------------------------ | ------------------------------------ | ------------------------- |
-|                                | Auction ➡️ (over AuctionStartedEvent) | HTTP POST @ `/auction`    |
+|                                | Auction ➡️ (over AuctionStartedEvent via Message Queue*) | HTTP POST @ `/auction`    |
 | HTTP POST @ `/bid/<AuctionId>` | ⬅️ Bid                                |                           |
 |                                | Task ➡️                              | HTTP POST @ `/taskwinner` |
+
+\* The message queue is offered either by MQTT or PubSubHub.
 
 ### Task Execution
 
@@ -119,7 +121,17 @@ For debugging purposes, the patched Task is returned.
     
 ## Task Types (with in- and outputs)
 
-### `ROBOT`
+### `BIGROBOT`
+
+(Cherrybot or PretendABot)
+    
+**Input**: _None_
+    
+**Output**: _None_
+  
+### `SMALLROBOT`
+  
+(Leubot)
     
 **Input**: _None_
     
