@@ -1,0 +1,37 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "taskId": {
+      "type": "string"
+    },
+    "taskName": {
+      "type": "string"
+    },
+    "taskType": {
+      "type": "string"
+    },
+    "taskStatus": {
+      "type": "string"
+    },
+    "originalTaskUri": {
+      "type": "string"
+    },
+    "serviceProvider": {
+      "type": "string"
+    },
+    "inputData": {
+      "type": "string",
+      "description": "Only applicable for the calculation task type: <operand1><+-*><operand2>"
+    }
+  },
+  "required": [
+    "taskId",
+    "taskName",
+    "taskType",
+    "taskStatus",
+    "originalTaskUri",
+    "serviceProvider",
+    "inputData"
+  ]
+}
