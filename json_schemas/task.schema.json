@@ -1,6 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
+  "id": "task+json",
   "properties": {
     "taskId": {
       "type": "string"
@@ -23,7 +24,12 @@
     "inputData": {
       "type": "string",
       "description": "Only applicable for the calculation task type: <operand1><+-*><operand2>"
+    },
+    "outputData": {
+      "type": "string",
+      "description": "Only applicable for the calculation task type: <result of the calculation>"
     }
+
   },
   "required": [
     "taskId",
