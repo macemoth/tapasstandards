@@ -18,7 +18,7 @@ This documents defines common Tapas APIs.
 
 ### Task Execution
 
-| TaskList (offering)               |                                          | AuctionHouse (bidding) |
+| TaskList (offering)               |                                          | Roster (bidding party) |
 | --------------------------------- | ---------------------------------------- | ---------------------- |
 | HTTP PATCH @ `/tasks/<task-UUID>` | ⬅️ TaskPatch (State.ASSIGNED)             |                        |
 |                                   |                                          | (Executes task)        |
@@ -34,7 +34,7 @@ This documents defines common Tapas APIs.
 
 #### HTTP POST `/auction`
 
-**Media-Type** `application-json`
+**Media-Type** `application-auction+json`
 
 **Body**:
 
@@ -42,12 +42,14 @@ This documents defines common Tapas APIs.
 {
   "auctionId":"",
   "auctionHouseUri":"",
-  "taskUri":"",
-  "taskType":"",
-  "deadline"""
+  "taskUri":"http://example.org/tasks/cef2fa9d-367b-4e7f-bf06-3b1fea35f354",
+  "taskType":"COMPUTATION",
+  "deadline":""
 }
+
 ```
-Note that `deadline` is produced by using Java's default `toString()` method of the `Timestamp` class
+- Note that `deadline` is produced by using Java's default `toString()` method of the `java.sql.Timestamp` class
+- The `taskUri` should not only contain the server, but also the `/tasks/<task-UUID>`, s.t. the original Task can be fetched
 
 **Response Codes**
 
@@ -57,7 +59,7 @@ _No codes defined as messages are sent by queue_
 
 #### HTTP POST `/bid/<auctionId>` 
 
-**Media-Type** `application-json`
+**Media-Type** `application-bid+json`
 
 **Body**:
 
@@ -66,7 +68,7 @@ _No codes defined as messages are sent by queue_
   "auctionId":"",
   "bidderName":"",
   "bidderAuctionHouseUri":"",
-  "bidderTaskListUri":"",
+  "bidderTaskListUri":""
 }
 ```
 
@@ -88,11 +90,12 @@ _No codes defined as messages are sent by queue_
 {
   "taskId":"cef2fa9d-367b-4e7f-bf06-3b1fea35f354",
   "taskName":"task1",
-  "taskType":"computation",
+  "taskType":"COMPUTATION",
   "taskStatus":"ASSIGNED",
-  "originalTaskUri":"http://example.org",
+  "originalTaskUri":"http://example.org/tasks/cef2fa9d-367b-4e7f-bf06-3b1fea35f354",
   "serviceProvider":"tapas-group1",
-  "inputData":"1+1"
+  "inputData":"1+1",
+  "outputData":"2"
 }
 ```
 
