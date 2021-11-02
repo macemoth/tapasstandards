@@ -18,7 +18,7 @@ This documents defines common Tapas APIs.
 
 ### Task Execution
 
-| TaskList (offering)               |                                          | Roster (bidding party) |
+| TaskList (offering)               |                                          | Bidding party (undefined endpoint)|
 | --------------------------------- | ---------------------------------------- | ---------------------- |
 | HTTP PATCH @ `/tasks/<task-UUID>` | ⬅️ TaskPatch (State.ASSIGNED)             |                        |
 |                                   |                                          | (Executes task)        |
@@ -34,17 +34,17 @@ This documents defines common Tapas APIs.
 
 #### HTTP POST `/auction`
 
-**Media-Type** `application-auction+json`
+**Media-Type** `application/auction+json`
 
 **Body**:
 
 ```json
 {
-  "auctionId":"",
-  "auctionHouseUri":"",
+  "auctionId": "1",
+  "auctionHouseUri": "https://127.0.0.1:8085/",
   "taskUri":"http://example.org/tasks/cef2fa9d-367b-4e7f-bf06-3b1fea35f354",
   "taskType":"COMPUTATION",
-  "deadline":""
+  "deadline":"2021-12-24 12:00:00"
 }
 
 ```
@@ -59,30 +59,30 @@ _No codes defined as messages are sent by queue_
 
 #### HTTP POST `/bid/<auctionId>` 
 
-**Media-Type** `application-bid+json`
+**Media-Type** `application/bid+json`
 
 **Body**:
 
 ```json
 {
-  "auctionId":"",
-  "bidderName":"",
-  "bidderAuctionHouseUri":"",
-  "bidderTaskListUri":""
+  "auctionId":"1",
+  "bidderName":"Group1",
+  "bidderAuctionHouseUri":"http://example.com/",
+  "bidderTaskListUri":"http://example.com/tasks/"
 }
 ```
 
 **Response Codes**
 
 - `204` (No content) Bid was received and accepted
-- `404` (Not found) There never was an option with that <auctionID>
+- `404` (Not found) There never was an auction with that `<auctionID>`
 - `410` (Gone) The Auction that was requested has already expired 
 
 *No response body*
 
 #### HTTP POST `/taskwinner` 
 
-**Media-Type** `application-task+json`
+**Media-Type** `application/task+json`
 
 **Body** (Identical to Task):
 
@@ -108,7 +108,7 @@ _No codes defined as messages are sent by queue_
     
 #### HTTP POST `/tasks/<taskId>` 
 
-**Media-Type** `json-patch+json`
+**Media-Type** `application/json-patch+json`
 
 **Body** (same as Task):
 _See `tapas-tasks` documentation_
@@ -131,9 +131,9 @@ For debugging purposes, the patched Task is returned.
 **Input**: _None_
     
 **Output**: _None_
-  
+
 ### `SMALLROBOT`
-  
+
 (Leubot)
     
 **Input**: _None_
@@ -141,7 +141,7 @@ For debugging purposes, the patched Task is returned.
 **Output**: _None_
     
 ### `COMPUTATION`
-    
+
 **Input**: `<OPERAND> <OPERATOR> <OPERAND>`
     
 **Output**: Integer result of computation
@@ -151,7 +151,7 @@ Valid Operands: All integers
 Valid Operators: `+`, `-`, `*`
     
 ### `RANDOMTEXT`
-    
+
 **Input**: _None_
     
 **Output**: Randomly generated sentence
