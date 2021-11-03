@@ -11,7 +11,7 @@ This documents defines common Tapas APIs.
 | AuctionHouse (offering)        |                                      | AuctionHouse (bidding)    |
 | ------------------------------ | ------------------------------------ | ------------------------- |
 |                                | Auction ➡️ (over AuctionStartedEvent via Message Queue*) | HTTP POST @ `/auction`    |
-| HTTP POST @ `/bid/<AuctionId>` | ⬅️ Bid                                |                           |
+| HTTP POST @ `/bid` | ⬅️ Bid                                |                           |
 |                                | Task ➡️                              | HTTP POST @ `/taskwinner` |
 
 \* The message queue is offered either by MQTT or PubSubHub.
@@ -57,7 +57,7 @@ _No codes defined as messages are sent by queue_
 
 *No response body*
 
-#### HTTP POST `/bid/<auctionId>` 
+#### HTTP POST `/bid` 
 
 **Media-Type** `application/bid+json`
 
