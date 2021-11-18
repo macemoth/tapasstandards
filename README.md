@@ -106,12 +106,11 @@ _No codes defined as messages are sent by queue_
 
 *No response body*
     
-#### HTTP POST `/tasks/<taskId>` 
+#### HTTP POST `/tasks/<taskId>` (on tapas-tasks)
 
 **Media-Type** `application/json-patch+json`
 
-**Body** (same as Task):
-_See `tapas-tasks` documentation_
+**Body**: _See `tapas-tasks` documentation_
 
 **Response Codes**
 
