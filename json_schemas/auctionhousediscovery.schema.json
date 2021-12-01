@@ -1,0 +1,28 @@
+{
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "uri": {
+        "type": "string"
+      },
+      "taskTypes": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "timeStamp": {
+        "type": "string"
+      },
+      "groupName": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "uri",
+      "taskTypes",
+      "timeStamp"
+    ]
+  }
+}
