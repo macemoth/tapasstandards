@@ -120,6 +120,41 @@ _No codes defined as messages are sent by queue_
 
 **Response Body**
 For debugging purposes, the patched Task is returned.
+  
+#### HTTP GET `/discovery/` (on tapas-auction-house)
+
+**Notes**
+- There is no request body
+- The response's task types are the ones that are sought, i.e. that cannot be executed locally (this way, the crawling auction house should subscribe to the discovered auction house if it can offer that service)
+  
+**Media-Type** `application/auctionhousediscovery+json`
+
+**Response Codes**
+
+- `200` (Accepted) The request was received.
+
+**Response Body**
+  
+```json
+  {
+  "auctionHouseInfo": [
+    {
+      "auctionhouseuri":"http://example.org",
+      "websuburi":"http://example.org",
+      "taskTypes":["COMPUTATION", "RANDOMTEXT"],
+      "timeStamp":"2021-12-24 12:00:00",
+      "groupName":"Group3"
+    },
+    {
+      "auctionhouseuri":"http://facemash.com",
+      "websuburi":"http://facemash.com",
+      "taskTypes":["BIGROBOT"],
+      "timeStamp":"2021-12-24 12:00:00",
+      "groupName":"Group2"
+    }
+  ]
+  }
+```
     
 ## Task Types (with in- and outputs)
 

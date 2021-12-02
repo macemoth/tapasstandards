@@ -1,0 +1,32 @@
+{
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "auctionhouseuri": {
+        "type": "string"
+      },
+      "websuburi": {
+        "type": "string"
+      },
+      "taskTypes": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "timeStamp": {
+        "type": "string"
+      },
+      "groupName": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "auctionhouseuri",
+      "websuburi",
+      "taskTypes",
+      "timeStamp"
+    ]
+  }
+}
