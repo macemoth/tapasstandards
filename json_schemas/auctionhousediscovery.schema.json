@@ -3,7 +3,10 @@
   "items": {
     "type": "object",
     "properties": {
-      "uri": {
+      "auctionhouseuri": {
+        "type": "string"
+      },
+      "websuburi": {
         "type": "string"
       },
       "taskTypes": {
@@ -20,7 +23,8 @@
       }
     },
     "required": [
-      "uri",
+      "auctionhouseuri",
+      "websuburi",
       "taskTypes",
       "timeStamp"
     ]
