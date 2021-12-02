@@ -126,12 +126,13 @@ For debugging purposes, the patched Task is returned.
 **Notes**
 - There is no request body
 - The response's task types are the ones that are sought, i.e. that cannot be executed locally (this way, the crawling auction house should subscribe to the discovered auction house if it can offer that service)
+- The URI is the topic URI of the auction house, which can then be used to discover the websubhub
   
-**Media-Type** `application/auctionhousediscovery+json`
+**Media-Type** `application/auctionhouseinfo+json`
 
 **Response Codes**
 
-- `200` (Accepted) The patch was applied to the Task
+- `200` (Accepted) The request was received.
 
 **Response Body**
   
