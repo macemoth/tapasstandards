@@ -190,3 +190,15 @@ Valid Operators: `+`, `-`, `*`
 **Input**: _None_
     
 **Output**: Randomly generated sentence
+
+### `HUMIDITY`
+    
+**Input**: _None_
+    
+**Output**: The measured humidity in percent
+  
+### `TEMPERATURE`
+    
+**Input**: _None_
+    
+**Output**: The measured temperature in degrees celsius
